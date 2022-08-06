@@ -18,6 +18,8 @@ dotenv.config();
 const api_key = process.env.API_KEY;
 const api_url = process.env.API_URL;
 
+const port = process.env.PORT || 8000;
+
 function getNLUInstance() {
     /*Type the code to create the NLU instance and return it.
     You can refer to the image in the instructions document
@@ -145,6 +147,6 @@ app.get("/text/sentiment", (req, res) => {
         });
 });
 
-let server = app.listen(8080, () => {
+let server = app.listen(port, () => {
     console.log("Listening", server.address().port);
 });
